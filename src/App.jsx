@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import './App.css';
+import AppPost from "./components/postsApp";
+import Timer from "./timer";
 
 export default class App extends Component {
   render() {
-    return (
-      <h2>Работа с коллекциями и атрибутом key</h2>
-      )
+    return <div>
+      <Timer />
+
+      <AppPost />
+    </div>
+      
   }
 }
-
-
