@@ -7,7 +7,11 @@ export function Posts(props) {
    return <div>
       {
          posts.map(post => (
-            <Post key={post.id} id={post.id} name={post.name} cb={() => cb(post.id)} />
+            <Post 
+               key={post.id} 
+               id={post.id} 
+               name={post.name} 
+               cb={cb} />
          ))
       }
       </div>

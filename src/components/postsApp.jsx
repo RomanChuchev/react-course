@@ -23,16 +23,7 @@ export default class AppPost extends Component {
   }
 
   delete = (id) => {
-    this.setState(({ posts }) => {
-      const index = posts.findIndex((el) => el.id === id);
-
-      const newArray = [
-        ...posts.slice(0, index),
-        ...posts.slice(index + 1)
-      ];
-
-      return { posts: newArray }
-    });
+    this.setState({posts: this.state.posts.filter(post => post.id !== id)})
   }
 
   render() {
