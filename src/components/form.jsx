@@ -1,14 +1,35 @@
 import React, { Component } from "react";
 
 export default class SubscriptionForm extends Component {
-   state = {
-      email: '',
-      isAgreeWithTerms: false,
+   constructor() {
+      super()
+
+      this.state = {
+         card: '',
+         email: '',
+         isAgreeWithTerms: false,
+      }
+
+      this.cardRef = React.createRef();
+      this.emailRef = React.createRef();
+   }
+
+   componentDidMount() {
+      this.cardRef.current.focus()
    }
 
    handleEmail = (event) => {
       this.setState({email: event.target.value})
    }
+
+   handleCard = (event) => {
+      this.setState(() => ({card: event.target.value}), () => {
+         if(this.state.card.length === 16) {
+            this.emailRef.current.focus()
+         }
+      })
+   }
+
    handleCheckbox = (event) => {
       this.setState({isAgreeWithTerms: event.target.checked})
    }
@@ -29,16 +50,25 @@ export default class SubscriptionForm extends Component {
       
    }
    render() {
-      const {email, isAgreeWithTerms} = this.state
+      const {card, email, isAgreeWithTerms} = this.state
 
       return ( 
          <div>
+         <input 
+               type="card"
+               name="card "
+               placeholder="card"
+               onChange={this.handleCard}
+               value={card} 
+               ref={this.cardRef}
+            />
             <input 
                type="email"
                name="email "
                placeholder="email"
                onChange={this.handleEmail}
                value={email} 
+               ref={this.emailRef}
             />
             <br />
             <label> 
