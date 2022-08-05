@@ -54,6 +54,7 @@ export default class SubscriptionForm extends Component {
 
       return ( 
          <div>
+         <h2>Конролируемые формы</h2>
          <input 
                type="card"
                name="card "

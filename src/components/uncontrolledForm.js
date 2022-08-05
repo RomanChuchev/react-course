@@ -25,6 +25,7 @@ export default class UncontrollForm extends Component {
 
    render() {
       return <form onSubmit={this.handleSubmit}>
+         <h2>Неконтролируемые формы</h2>
          <input 
             type="text"
             name="card"

@@ -9,7 +9,16 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <AppPost />
+        <br/>
+        <Timer />
+        <br/>
+        <SubscriptionForm />
+        <br/>
+
         <UncontrollForm />
+        <br/>
+
       </div>
     )     
   }
