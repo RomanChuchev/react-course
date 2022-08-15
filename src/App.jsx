@@ -1,25 +1,12 @@
 import React, { Component } from "react";
-import './App.css';
-import AppPost from "./components/postsApp";
-import Timer from "./timer";
-import SubscriptionForm from "./components/form"
-import UncontrollForm from "./components/uncontrolledForm";
-
+import "./App.css";
+import Timer from "./components/timer";
 export default class App extends Component {
   render() {
     return (
       <div>
-        <AppPost />
-        <br/>
         <Timer />
-        <br/>
-        <SubscriptionForm />
-        <br/>
-
-        <UncontrollForm />
-        <br/>
-
       </div>
-    )     
+    );
   }
 }
